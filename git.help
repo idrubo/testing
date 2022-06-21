@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# To start a brand new repository.
+git init
+
+# To stage current modifications.
+git add *
+
+# To commit the index.
+git commit -m "Commit comment."
+
+# To add a remote for push/pull commands.
+git remote add origin https://github.com/idrubo/testing.git
+
+# To push a repository to a remote git server.
+git push origin master
+
+# To pull a repository from a remote git server.
+git pull origin master
+
+exit 0
+

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# To change root password:
+
+mysqladmin -u root password
+
+# To run mysql.exe programs:
+
+winpty ./mysql.exe -u root -p
+

@@ -1,10 +1,42 @@
 #!/bin/bash
 
 # To change root password:
-
 mysqladmin -u root password
 
-# To run mysql.exe programs:
+# To change the root password if it is already set:
+mysqladmin.exe -u root -p password 'pass'
 
+# To check if the sql server is alive:
+mysqladmin.exe -u root -p ping
+
+# To run mysql.exe on gitbash on windows:
 winpty ./mysql.exe -u root -p
+
+# To create a user:
+CREATE USER 'local_user'@'localhost' IDENTIFIED BY 'password';
+
+# To grant privileges to the user:
+GRANT ALL ON *.* TO 'janet'@'localhost' WITH GRANT OPTION;
+
+# To flush user priveleges:
+FLUSH PRIVILEGES;
+
+# To revoke privileges to the user:
+REVOKE SELECT, INSERT ON strongdm.* FROM 'local_user'@'localhost';
+
+# To change the user privileges:
+ALTER USER 'local_user'@'localhost' IDENTIFIED BY 'new_password';
+
+# To delete a user:
+DROP USER 'local_user'@'localhost';
+
+# To show all users:
+SELECT * FROM mysql.user;
+
+# To show user privileges:
+SHOW GRANTS FOR 'local_user'@'localhost';
+
+# To show privileges for a table or a column:
+SELECT * FROM 'INFORMATION_SCHEMA'.'TABLE_PRIVILEGES' WHERE TABLE_NAME='my_table';
+SELECT * FROM 'INFORMATION_SCHEMA'.'COLUMN_PRIVILEGES' WHERE TABLE_NAME='my_table';
 
